@@ -1,0 +1,18 @@
+version: "3.8"
+services:
+  observe-agent:
+    image: "observeinc/observe-agent:latest"
+    pid: host
+    volumes:
+      # Mount host system's directories to the container for monitoring
+      - /proc:/hostfs/proc:ro
+      - /snap:/hostfs/snap:ro
+      - /var/lib:/hostfs/var/lib:ro
+      - /var/log:/hostfs/var/log:ro
+      - /var/log/pods:/var/log/pods
+      - /var/lib/docker/containers:/var/lib/docker/containers
+      # Configuration file for the agent (assuming it's present in the current directory)
+      - ./observe-agent.yaml:/etc/observe-agent/observe-agent.yaml
+    environment:
+      - ENV_VARIABLE=${ENV_VARIABLE}  # Set necessary environment variables for your agent if needed
+    network_mode: host  # Using the host network for better monitoring
