@@ -1,20 +1,17 @@
-# Copyright The OpenTelemetry Authors
-# SPDX-License-Identifier: Apache-2.0
-
 receivers:
   otlp:
     protocols:
       grpc:
-        endpoint: ${env:OTEL_COLLECTOR_HOST}:${env:OTEL_COLLECTOR_PORT_GRPC}
+        endpoint: ${OTEL_COLLECTOR_HOST}:${OTEL_COLLECTOR_PORT_GRPC}
       http:
-        endpoint: ${env:OTEL_COLLECTOR_HOST}:${env:OTEL_COLLECTOR_PORT_HTTP}
+        endpoint: ${OTEL_COLLECTOR_HOST}:${OTEL_COLLECTOR_PORT_HTTP}
         cors:
           allowed_origins:
             - "http://*"
             - "https://*"
   httpcheck/frontend-proxy:
     targets:
-      - endpoint: http://frontend-proxy:${env:ENVOY_PORT}
+      - endpoint: "http://frontend-proxy:${ENVOY_PORT}"
   docker_stats:
     endpoint: unix:///var/run/docker.sock
   redis:
@@ -106,9 +103,9 @@ exporters:
         insecure: true
   # Added ObserveInc OTLP Exporter
   otlphttp/observe:
-    endpoint: "https://111574648308.collect.observeinc.com/v1/otel/v1/traces"  # Your ObserveInc OTLP endpoint
+    endpoint: "https://111574648308.collect.observeinc.com/v2/otel"  # Your ObserveInc OTLP endpoint
     headers:
-      Authorization: "Bearer ds1ZLthlKiKenE7vsUYK:51HtkaF0K3bjI4M_jcjWAYbiPOek0v6m"  # Your ObserveInc token
+      Authorization: "Bearer ds1W1yfMcurVHXRag5Lw:FS1_nyXHD7jRFvDx2Sp70hrEBXJifgpM"  # Your ObserveInc token
     tls:
       insecure: false  # Set to true if ObserveInc doesn't require TLS verification
 
@@ -119,7 +116,7 @@ processors:
     trace_statements:
       - context: span
         statements:
-          # could be removed when https://github.com/vercel/next.js/pull/64852 is fixed upstream
+          # Could be removed when https://github.com/vercel/next.js/pull/64852 is fixed upstream
           - replace_pattern(name, "\\?.*", "")
           - replace_match(name, "GET /api/products/*", "GET /api/products/{productId}")
 

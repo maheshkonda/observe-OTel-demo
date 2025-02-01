@@ -31,7 +31,7 @@ services:
       - OTEL_SERVICE_NAME=accounting
       - >-
         OBSERVE_URL="https://111574648308.collect.observeinc.com/v1/otel/v1/traces"
-      - 'OBSERVE_TOKEN="ds1ZLthlKiKenE7vsUYK:51HtkaF0K3bjI4M_jcjWAYbiPOek0v6m"'
+      - 'OBSERVE_TOKEN="ds1W1yfMcurVHXRag5Lw:FS1_nyXHD7jRFvDx2Sp70hrEBXJifgpM"'
     depends_on:
       otel-collector:
         condition: service_started
@@ -81,7 +81,7 @@ services:
       - OTEL_SERVICE_NAME=ad
       - >-
         OBSERVE_URL="https://111574648308.collect.observeinc.com/v1/otel/v1/traces"
-      - 'OBSERVE_TOKEN="ds1ZLthlKiKenE7vsUYK:51HtkaF0K3bjI4M_jcjWAYbiPOek0v6m"'
+      - 'OBSERVE_TOKEN="ds1W1yfMcurVHXRag5Lw:FS1_nyXHD7jRFvDx2Sp70hrEBXJifgpM"'
     depends_on:
       otel-collector:
         condition: service_started
@@ -114,7 +114,7 @@ services:
       - 'ASPNETCORE_URLS=http://*:${CART_PORT}'
       - >-
         OBSERVE_URL="https://111574648308.collect.observeinc.com/v1/otel/v1/traces"
-      - 'OBSERVE_TOKEN="ds1ZLthlKiKenE7vsUYK:51HtkaF0K3bjI4M_jcjWAYbiPOek0v6m"'
+      - 'OBSERVE_TOKEN="ds1W1yfMcurVHXRag5Lw:FS1_nyXHD7jRFvDx2Sp70hrEBXJifgpM"'
     depends_on:
       valkey-cart:
         condition: service_started
@@ -155,7 +155,7 @@ services:
       - OTEL_SERVICE_NAME=checkout
       - >-
         OBSERVE_URL="https://111574648308.collect.observeinc.com/v1/otel/v1/traces"
-      - 'OBSERVE_TOKEN="ds1ZLthlKiKenE7vsUYK:51HtkaF0K3bjI4M_jcjWAYbiPOek0v6m"'
+      - 'OBSERVE_TOKEN="ds1W1yfMcurVHXRag5Lw:FS1_nyXHD7jRFvDx2Sp70hrEBXJifgpM"'
     depends_on:
       cart:
         condition: service_started
@@ -201,7 +201,7 @@ services:
         OTEL_RESOURCE_ATTRIBUTES=${OTEL_RESOURCE_ATTRIBUTES},service.name=currency
       - >-
         OBSERVE_URL="https://111574648308.collect.observeinc.com/v1/otel/v1/traces"
-      - 'OBSERVE_TOKEN="ds1ZLthlKiKenE7vsUYK:51HtkaF0K3bjI4M_jcjWAYbiPOek0v6m"'
+      - 'OBSERVE_TOKEN="ds1W1yfMcurVHXRag5Lw:FS1_nyXHD7jRFvDx2Sp70hrEBXJifgpM"'
     depends_on:
       otel-collector:
         condition: service_started
@@ -230,7 +230,7 @@ services:
       - OTEL_SERVICE_NAME=email
       - >-
         OBSERVE_URL="https://111574648308.collect.observeinc.com/v1/otel/v1/traces"
-      - 'OBSERVE_TOKEN="ds1ZLthlKiKenE7vsUYK:51HtkaF0K3bjI4M_jcjWAYbiPOek0v6m"'
+      - 'OBSERVE_TOKEN="ds1W1yfMcurVHXRag5Lw:FS1_nyXHD7jRFvDx2Sp70hrEBXJifgpM"'
     depends_on:
       otel-collector:
         condition: service_started
@@ -331,7 +331,7 @@ services:
       - FLAGD_UI_PORT
       - >-
         OBSERVE_URL="https://111574648308.collect.observeinc.com/v1/otel/v1/traces"
-      - 'OBSERVE_TOKEN="ds1ZLthlKiKenE7vsUYK:51HtkaF0K3bjI4M_jcjWAYbiPOek0v6m"'
+      - 'OBSERVE_TOKEN="ds1W1yfMcurVHXRag5Lw:FS1_nyXHD7jRFvDx2Sp70hrEBXJifgpM"'
     depends_on:
       frontend:
         condition: service_started
@@ -374,7 +374,7 @@ services:
       - FLAGD_PORT
       - >-
         OBSERVE_URL="https://111574648308.collect.observeinc.com/v1/otel/v1/traces"
-      - 'OBSERVE_TOKEN="ds1ZLthlKiKenE7vsUYK:51HtkaF0K3bjI4M_jcjWAYbiPOek0v6m"'
+      - 'OBSERVE_TOKEN="ds1W1yfMcurVHXRag5Lw:FS1_nyXHD7jRFvDx2Sp70hrEBXJifgpM"'
     depends_on:
       frontend:
         condition: service_started
@@ -406,7 +406,7 @@ services:
       - OTEL_SERVICE_NAME=payment
       - >-
         OBSERVE_URL="https://111574648308.collect.observeinc.com/v1/otel/v1/traces"
-      - 'OBSERVE_TOKEN="ds1ZLthlKiKenE7vsUYK:51HtkaF0K3bjI4M_jcjWAYbiPOek0v6m"'
+      - 'OBSERVE_TOKEN="ds1W1yfMcurVHXRag5Lw:FS1_nyXHD7jRFvDx2Sp70hrEBXJifgpM"'
     depends_on:
       otel-collector:
         condition: service_started
@@ -439,7 +439,7 @@ services:
       - OTEL_SERVICE_NAME=product-catalog
       - >-
         OBSERVE_URL="https://111574648308.collect.observeinc.com/v1/otel/v1/traces"
-      - 'OBSERVE_TOKEN="ds1ZLthlKiKenE7vsUYK:51HtkaF0K3bjI4M_jcjWAYbiPOek0v6m"'
+      - 'OBSERVE_TOKEN="ds1W1yfMcurVHXRag5Lw:FS1_nyXHD7jRFvDx2Sp70hrEBXJifgpM"'
     volumes:
       - './src/product-catalog/products:/usr/src/app/products'
     depends_on:
@@ -473,7 +473,7 @@ services:
       - OTEL_PHP_INTERNAL_METRICS_ENABLED=true
       - >-
         OBSERVE_URL="https://111574648308.collect.observeinc.com/v1/otel/v1/traces"
-      - 'OBSERVE_TOKEN="ds1ZLthlKiKenE7vsUYK:51HtkaF0K3bjI4M_jcjWAYbiPOek0v6m"'
+      - 'OBSERVE_TOKEN="ds1W1yfMcurVHXRag5Lw:FS1_nyXHD7jRFvDx2Sp70hrEBXJifgpM"'
     depends_on:
       otel-collector:
         condition: service_started
@@ -506,7 +506,7 @@ services:
       - PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION=python
       - >-
         OBSERVE_URL="https://111574648308.collect.observeinc.com/v1/otel/v1/traces"
-      - 'OBSERVE_TOKEN="ds1ZLthlKiKenE7vsUYK:51HtkaF0K3bjI4M_jcjWAYbiPOek0v6m"'
+      - 'OBSERVE_TOKEN="ds1W1yfMcurVHXRag5Lw:FS1_nyXHD7jRFvDx2Sp70hrEBXJifgpM"'
     depends_on:
       product-catalog:
         condition: service_started
@@ -539,7 +539,7 @@ services:
       - OTEL_SERVICE_NAME=shipping
       - >-
         OBSERVE_URL="https://111574648308.collect.observeinc.com/v1/otel/v1/traces"
-      - 'OBSERVE_TOKEN="ds1ZLthlKiKenE7vsUYK:51HtkaF0K3bjI4M_jcjWAYbiPOek0v6m"'
+      - 'OBSERVE_TOKEN="ds1W1yfMcurVHXRag5Lw:FS1_nyXHD7jRFvDx2Sp70hrEBXJifgpM"'
     depends_on:
       otel-collector:
         condition: service_started
@@ -560,7 +560,7 @@ services:
       - OTEL_SERVICE_NAME=flagd
       - >-
         OBSERVE_URL="https://111574648308.collect.observeinc.com/v1/otel/v1/traces"
-      - 'OBSERVE_TOKEN="ds1ZLthlKiKenE7vsUYK:51HtkaF0K3bjI4M_jcjWAYbiPOek0v6m"'
+      - 'OBSERVE_TOKEN="ds1W1yfMcurVHXRag5Lw:FS1_nyXHD7jRFvDx2Sp70hrEBXJifgpM"'
     command:
       - start
       - '--uri'
@@ -596,7 +596,7 @@ services:
       - _JAVA_OPTIONS
       - >-
         OBSERVE_URL="https://111574648308.collect.observeinc.com/v1/otel/v1/traces"
-      - 'OBSERVE_TOKEN="ds1ZLthlKiKenE7vsUYK:51HtkaF0K3bjI4M_jcjWAYbiPOek0v6m"'
+      - 'OBSERVE_TOKEN="ds1W1yfMcurVHXRag5Lw:FS1_nyXHD7jRFvDx2Sp70hrEBXJifgpM"'
     healthcheck:
       test: nc -z kafka 9092
       start_period: 10s
@@ -618,7 +618,7 @@ services:
     environment:
       - >-
         OBSERVE_URL="https://111574648308.collect.observeinc.com/v1/otel/v1/traces"
-      - 'OBSERVE_TOKEN="ds1ZLthlKiKenE7vsUYK:51HtkaF0K3bjI4M_jcjWAYbiPOek0v6m"'
+      - 'OBSERVE_TOKEN="ds1W1yfMcurVHXRag5Lw:FS1_nyXHD7jRFvDx2Sp70hrEBXJifgpM"'
     logging: *ref_0
   jaeger:
     image: '${JAEGERTRACING_IMAGE}'
@@ -641,7 +641,7 @@ services:
       - METRICS_STORAGE_TYPE=prometheus
       - >-
         OBSERVE_URL="https://111574648308.collect.observeinc.com/v1/otel/v1/traces"
-      - 'OBSERVE_TOKEN="ds1ZLthlKiKenE7vsUYK:51HtkaF0K3bjI4M_jcjWAYbiPOek0v6m"'
+      - 'OBSERVE_TOKEN="ds1W1yfMcurVHXRag5Lw:FS1_nyXHD7jRFvDx2Sp70hrEBXJifgpM"'
     logging: *ref_0
   grafana:
     image: '${GRAFANA_IMAGE}'
@@ -655,7 +655,7 @@ services:
       - GF_INSTALL_PLUGINS=grafana-opensearch-datasource
       - >-
         OBSERVE_URL="https://111574648308.collect.observeinc.com/v1/otel/v1/traces"
-      - 'OBSERVE_TOKEN="ds1ZLthlKiKenE7vsUYK:51HtkaF0K3bjI4M_jcjWAYbiPOek0v6m"'
+      - 'OBSERVE_TOKEN="ds1W1yfMcurVHXRag5Lw:FS1_nyXHD7jRFvDx2Sp70hrEBXJifgpM"'
     volumes:
       - './src/grafana/grafana.ini:/etc/grafana/grafana.ini'
       - './src/grafana/provisioning/:/etc/grafana/provisioning/'
@@ -696,7 +696,7 @@ services:
       - OTEL_COLLECTOR_PORT_HTTP
       - >-
         OBSERVE_URL="https://111574648308.collect.observeinc.com/v1/otel/v1/traces"
-      - 'OBSERVE_TOKEN="ds1ZLthlKiKenE7vsUYK:51HtkaF0K3bjI4M_jcjWAYbiPOek0v6m"'
+      - 'OBSERVE_TOKEN="ds1W1yfMcurVHXRag5Lw:FS1_nyXHD7jRFvDx2Sp70hrEBXJifgpM"'
   prometheus:
     image: '${PROMETHEUS_IMAGE}'
     container_name: prometheus
@@ -740,7 +740,7 @@ services:
       - _JAVA_OPTIONS
       - >-
         OBSERVE_URL="https://111574648308.collect.observeinc.com/v1/otel/v1/traces"
-      - 'OBSERVE_TOKEN="ds1ZLthlKiKenE7vsUYK:51HtkaF0K3bjI4M_jcjWAYbiPOek0v6m"'
+      - 'OBSERVE_TOKEN="ds1W1yfMcurVHXRag5Lw:FS1_nyXHD7jRFvDx2Sp70hrEBXJifgpM"'
     ulimits:
       memlock:
         soft: -1
