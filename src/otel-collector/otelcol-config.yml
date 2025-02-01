@@ -104,13 +104,6 @@ exporters:
       endpoint: "http://opensearch:9200"
       tls:
         insecure: true
-  # Added ObserveInc OTLP Exporter
-  otlphttp/observe:
-    endpoint: "https://123456789012.collect.observeinc.com/v2/otel"  # Your ObserveInc OTLP endpoint
-    headers:
-      Authorization: "Bearer ds1n93RpShyZ677YvA54:mPtIXjWNJFZhgPluRUn691_et-axB15w"  # Your ObserveInc token
-    tls:
-      insecure: false  # Set to true if ObserveInc doesn't require TLS verification
 
 processors:
   batch:
@@ -131,7 +124,7 @@ service:
     traces:
       receivers: [otlp]
       processors: [transform, batch]
-      exporters: [otlp, debug, spanmetrics, otlphttp/observe]  # Added ObserveInc exporter here
+      exporters: [otlp, debug, spanmetrics]
     metrics:
       receivers: [hostmetrics, docker_stats, httpcheck/frontend-proxy, otlp, prometheus, redis, spanmetrics]
       processors: [batch]
