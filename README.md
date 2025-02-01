@@ -25,10 +25,6 @@ goals:
   demonstrate their OpenTelemetry integrations.
 .
 
-We've already made [huge
-progress](https://github.com/open-telemetry/opentelemetry-demo/blob/main/CHANGELOG.md),
-and development is ongoing. We hope to represent the full feature set of
-OpenTelemetry across its languages in the future.
 
 This is only completed on docker
 
