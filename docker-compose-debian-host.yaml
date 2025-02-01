@@ -15,4 +15,10 @@ services:
       - ./observe-agent.yaml:/etc/observe-agent/observe-agent.yaml
     environment:
       - ENV_VARIABLE=${ENV_VARIABLE}  # Set necessary environment variables for your agent if needed
-    network_mode: host  # Using the host network for better monitoring
+    networks:
+      - opentelemetry-demo
+
+networks:
+  opentelemetry-demo:
+    driver: bridge
+    #network_mode: host  # Uncomment for host networking if required

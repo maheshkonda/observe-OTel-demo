@@ -44,6 +44,19 @@ services:
         condition: service_healthy
     logging: *logging
 
+#install observe agnet
+  observe-agent:
+    image: observeinc/observe-agent:latest
+    pid: "host"
+    volumes:
+      - C:\proc:/hostfs/proc:ro
+      - C:\snap:/hostfs/snap:ro
+      - C:\var\lib:/hostfs/var/lib:ro
+      - C:\var\log:/hostfs/var/log:ro
+      - C:\var\lib\docker\containers:/var/lib/docker/containers:ro
+      - C:\var\log\pods:/var/log/pods:ro
+      - C:\obs\observe-agent.yaml:/etc/observe-agent/observe-agent.yaml
+
   # AdService
   ad:
     image: ${IMAGE_NAME}:${DEMO_VERSION}-ad

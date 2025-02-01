@@ -108,7 +108,7 @@ exporters:
   otlphttp/observe:
     endpoint: "https://123456789012.collect.observeinc.com/v2/otel"  # Your ObserveInc OTLP endpoint
     headers:
-      Authorization: "Bearer ds1n93RpShyZ677YvA54:mPtIXjWNJFZhgPluRUn691_et-axB15w"  # Your ObserveInc token
+      Authorization: "Bearer ds1n93RpShyZ677YvA54:mPtIXjWNJFZhgPluRUn691_et-axB15w  # Your ObserveInc token
     tls:
       insecure: false  # Set to true if ObserveInc doesn't require TLS verification
 
