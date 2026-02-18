@@ -11,6 +11,8 @@ jobs:
   demo-ephemeral-agent:
     name: Run on ephemeral ARC runner
     runs-on: team-a-runners
+    container:
+      image: ubuntu:22.04
     steps:
       - name: Show runner identity
         run: |
