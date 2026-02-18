@@ -1,0 +1,51 @@
+name: Ephemeral Runner Demo
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - '.github/workflows/ephemeral-runner-demo.yml'
+  workflow_dispatch:
+
+jobs:
+  demo-ephemeral-agent:
+    name: Run on ephemeral ARC runner
+    runs-on: team-a-runners
+    steps:
+      - name: Show runner identity
+        run: |
+          echo "=========================================="
+          echo "  EPHEMERAL RUNNER POC - ABI InBev"
+          echo "=========================================="
+          echo "Runner hostname:   $(hostname)"
+          echo "Runner user:       $(whoami)"
+          echo "Runner OS:         $(uname -a)"
+          echo "Job started at:    $(date)"
+          echo ""
+
+      - name: Simulate build step
+        run: |
+          echo "Step 1: Compiling code..."
+          sleep 3
+          echo "Step 1: DONE"
+
+      - name: Simulate test step
+        run: |
+          echo "Step 2: Running tests..."
+          sleep 3
+          echo "Step 2: All tests passed"
+
+      - name: Simulate push to registry
+        run: |
+          echo "Step 3: Pushing container image..."
+          sleep 3
+          echo "Step 3: Image pushed to ACR"
+
+      - name: Show runner will be destroyed
+        run: |
+          echo ""
+          echo "=========================================="
+          echo "  Job complete. This pod will now"
+          echo "  self-destruct. No idle cost."
+          echo "=========================================="
+          echo "Pod terminated at: $(date)"
