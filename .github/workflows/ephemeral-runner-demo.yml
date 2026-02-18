@@ -3,8 +3,6 @@ name: Ephemeral Runner Demo
 on:
   push:
     branches: [ main ]
-    paths:
-      - '.github/workflows/ephemeral-runner-demo.yml'
   workflow_dispatch:
 
 jobs:
